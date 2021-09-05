@@ -33,7 +33,7 @@ jobs:
        - name: cloning repo and install
          continue-on-error: true
          run: |
-           git clone https://${{ secrets.NAME }}:${{ secrets.TOKEN }}@github.com/railwaysama/vcbot discord && cd discord && pip3 install -r requirements.txt
+           git clone https://${{ secrets.NAME }}:${{ secrets.TOKEN }}@github.com/railwaysama/vcbot && cd vcbot && pip3 install -r requirements.txt
            pwd
        - name: Running
          timeout-minutes: 350
@@ -41,5 +41,5 @@ jobs:
          run: |
            sudo apt -qq update && sudo apt -qq install -y --no-install-recommends ffmpeg neofetch
            pwd
-           cd discord
+           cd vcbot
            python3 main.py
